@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer components{
+
+    .signupContainer{
+
+
+        position: fixed;
+        z-index: 5;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -60%);
+        background-color: rgb(145, 195, 198);;
+        width: 400px;
+
+    }
+    body.active-modal-signup{
+        overflow-y: hidden;
+    }
+}
