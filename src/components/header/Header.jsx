@@ -3,26 +3,13 @@ import "./Header.css";
 import ProfileTooltip from "../Profile_Tooltip/ProfileTooltip";
 import { useNavigate } from "react-router-dom";
 import {authenticationContext} from '../../App'
+import { AuthContext } from "../../hooks/AuthContext";
 
 function Header() {
 
-    const props=useContext(authenticationContext)
+    const {user,handleProfileTooltip,tooltip}=useContext(AuthContext)
 
- 
-    const {user,setUser,isLoggedIn,setIsLoggedIn,handleClick}=props
-
-    const navigate=useNavigate()
-
-        const handleProfileTooltip=()=>{
-
-            setUser(!user)
-        }
-
-        const handleLogin=()=>{
-
-            setLogin()
-
-        }
+    const navigate=useNavigate()     
 
     return (
         <div>
@@ -55,7 +42,7 @@ function Header() {
                     />
                    
                 </div>
-                {isLoggedIn?
+                {user?
                 <div className="login-btn" onClick={handleProfileTooltip} >
                     
                     <div className="user-profile flex gap-2 items-center justify-center">
@@ -71,11 +58,11 @@ function Header() {
                             
                         />                        
                     </div>
-                   {user&& <ProfileTooltip props={{user,setUser,isLoggedIn,setIsLoggedIn}} />}
+                   {tooltip&& <ProfileTooltip />}
                 </div>
                 :<button className="underline underline-offset-2" onClick={()=>navigate('/login')}>Login</button>}
 
-                <div onClick={()=>navigate('/sell')} className="sell-btn cursor-pointer">
+                <div onClick={()=>user?navigate('/sell'):navigate('/login')} className="sell-btn cursor-pointer">
                     <span>Sell</span>
                 </div>
             </div>

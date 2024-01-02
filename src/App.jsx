@@ -13,6 +13,7 @@ import Signup from './components/forms/Signup';
 import CreatePost from './components/CreatePost/CreatePost';
 import { Outlet } from 'react-router-dom';
 import PostContextComponent from './hooks/PostContext'
+import AuthContextComponent from './hooks/AuthContext';
 
 
 
@@ -21,49 +22,20 @@ import PostContextComponent from './hooks/PostContext'
 function App() {
 
 
-  const [user, setUser] = useState(true)
-  const [isLoggedIn, setIsLoggedIn] = useState(false)
-  const [login, setLogin] = useState(false)
-  const [signup,setSignup]=useState(false)
 
-  const handleSignup=()=>{
-    setSignup(!signup)
-    setLogin(false)
-  }
-
-  
-  const handleClick=()=>{
-    setLogin(!login)
-}
 
 
 
   return (
 
-    <authenticationContext.Provider value={{signup,handleSignup,login,handleClick,user,setUser,isLoggedIn,setIsLoggedIn}} >
-      <PostContextComponent>
-    
+    <AuthContextComponent>
+      <PostContextComponent>    
     <div className='container' >
-      {/* <Header props={{user,setUser,isLoggedIn,setIsLoggedIn,handleClick}} />
-      
-       <Login props={{login,handleClick,handleSignup}} />
-        <Post/>
-        <Post/>
-        <Post/>
-        <Signup props={{signup,handleSignup}} />
-       
-
-        <Product/>
-        <Wishlist/>
-
-        <CreatePost/>
-        
-      
-      <Footer/> */}
       <Outlet/>
     </div>
     </PostContextComponent>
-    </authenticationContext.Provider>
+    </AuthContextComponent>
+  
     
   )
 }

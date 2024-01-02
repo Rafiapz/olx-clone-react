@@ -1,17 +1,18 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import './ProfileTooltip.css'
+import { AuthContext } from '../../hooks/AuthContext'
 
-function ProfileTooltip(props) {
+function ProfileTooltip() {
 
-    const { user, setUser, isLoggedIn, setIsLoggedIn } = props.props
+    const { user,logout,} = useContext(AuthContext)
 
     return (
-
-
+        <>
+        {user&&
         <div className="tooltip-container">
             <div className="top-user-profile">
                 <img src="https://cdn-icons-png.flaticon.com/512/666/666201.png" alt="" className="w-10" />
-                <h4>username</h4>
+                <h4>{user.name}</h4>
             </div>
             <div className="profile-link mx-6">
                 <h6 className="text-center">View and edit profile</h6>
@@ -39,12 +40,12 @@ function ProfileTooltip(props) {
                 <div className="item px-8" >
                     <img src="icons/logout.png" alt="" className="w-5" />
                     <h4 onClick={() => {
-                        setIsLoggedIn()
-                        setUser()
+                       logout()
                     }} >Logout</h4>
                 </div>
             </div>
-        </div>
+        </div>}
+        </>
 
     )
 }

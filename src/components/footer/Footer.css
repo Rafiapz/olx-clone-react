@@ -1,5 +1,5 @@
 .footer-container .top-container{
-    @apply bg-slate-100 flex items-start justify-between px-8 py-8;
+    @apply bg-slate-100 flex items-start justify-between px-8 py-8 mt-64;
 }
 .footer-container .bottom-container h4{
     @apply text-xs font-normal;
