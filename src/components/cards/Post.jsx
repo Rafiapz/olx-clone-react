@@ -54,6 +54,7 @@ function Post() {
                                 </div>
                             </div>
                             <h1 className="amount">₹ {obj.price ?? obj.price} </h1>
+                            <h3 style={{marginLeft:'15px'}} >{obj.title} </h3>
                             <h5 style={{marginLeft:'15px'}} >{obj.description} </h5>
                             
                         </div>

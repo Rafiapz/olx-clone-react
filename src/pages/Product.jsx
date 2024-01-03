@@ -10,33 +10,28 @@ import Footer from '../components/footer/Footer'
 function Product() {
 
     const [user, setUser] = useState()
-    const [product,setProduct]=useState()
-    const [query]=useSearchParams()
+    const [product, setProduct] = useState()
+    const [query] = useSearchParams()
 
-
-
-    const { postDetails,setPostDetails,id } = useContext(PostContext)
-
- 
 
     const handleFetchDoc = async () => {
         try {
-            
-            const id=query.get('id')
+
+            const id = query.get('id')
             const docRef = doc(db, "products", id);
-         
+
             const docSnap = await getDoc(docRef);
             if (docSnap.exists()) {
                 setProduct(docSnap.data());
                 console.log(docSnap.data());
                 const userId = docSnap.data().userId;
                 const userDocRef = doc(db, "users", userId);
-                
+
                 const userDocSnap = await getDoc(userDocRef);
-                if(userDocSnap.exists()){
+                if (userDocSnap.exists()) {
                     setUser(userDocSnap.data());
                     console.log(userDocSnap.data());
-                    
+
                 } else {
                     throw "user doesn't exist";
                 }
@@ -50,22 +45,21 @@ function Product() {
 
     useEffect(() => {
 
-        handleFetchDoc()      
-               
+        handleFetchDoc()
+
         return () => {
-            
+
         }
     }, [])
 
- 
+
 
     return (
         <>
             <Header />
             <div className="w-full h-screen flex px-12 py-10 gap-4 bg-slate-100">
                 <div className="img-container w-[60%] p-20 bg-white shadow-xl">
-                    {/* <img src={postDetails.imageUrl} alt="" className="w-full" /> */}
-                    <div style={{backgroundImage:`url(${product?.imageUrl})`,backgroundSize:'contain',width:'100%',height:'400px',backgroundRepeat:'no-repeat'}} ></div>
+                    <div style={{ backgroundImage: `url(${product?.imageUrl})`, backgroundSize: 'contain', width: '100%', height: '400px', backgroundRepeat: 'no-repeat' }} ></div>
                 </div>
                 <div className="details-container w-[40%] flex flex-col gap-4">
                     <div className="product-details w-full shadow-xl flex flex-col items-start px-4 py-8 bg-white">
@@ -74,7 +68,7 @@ function Product() {
                             <img src="/icons/love.png" alt="" className="w-8" />
                         </div>
                         <h2 className="text-lg font-normal mt-2"></h2>
-                        <p className="text-xs font-light">{}</p>
+                        <h1 className="text-xl font-light">{product?.title}</h1>
                     </div>
                     <div className="user-details w-full shadow-xl flex flex-col items-start px-4 py-8 gap-2 bg-white">
                         <div className="w-full flex items-center justify-between px-4 py-4 border rounded">
@@ -86,7 +80,7 @@ function Product() {
                     </div>
                 </div>
             </div>
-            <Footer/>
+            <Footer />
 
         </>
 

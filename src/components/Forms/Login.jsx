@@ -21,7 +21,6 @@ function Login() {
         e.preventDefault()
         try {
             await signInWithEmailAndPassword(auth, Email, Password);
-            // user.handleUser(auth.currentUser.displayName);
             setUser(true)
             navigate('/')
         } catch (err) {

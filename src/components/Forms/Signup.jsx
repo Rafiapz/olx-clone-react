@@ -9,9 +9,11 @@ import Header from "../header/Header";
 import Footer from "../footer/Footer";
 import Post from "../cards/Post";
 import { AuthContext } from "../../hooks/AuthContext";
+import { useForm } from 'react-hook-form';
 
 function Signup() {
     const { isLoggedIn,handleSignup } = useContext(AuthContext);
+    
 
     const [Name, setName] = useState("");
     const [Email, setEmail] = useState("");
@@ -19,6 +21,7 @@ function Signup() {
     const [Password, setPassword] = useState("");
 
     const navigate = useNavigate();
+
 
     const handleUser = (val) => {
        
