@@ -4,7 +4,7 @@ import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
 import { addDoc, collection } from "firebase/firestore";
 import Header from "../header/Header";
 import { useNavigate } from "react-router-dom";
-import { AuthContext } from "../../hooks/AuthContext";
+import { AuthContext } from "../../store/AuthContext";
 
 function CreatePost() {
     const [img, setImg] = useState();

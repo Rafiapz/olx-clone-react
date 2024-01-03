@@ -2,8 +2,7 @@ import React, { useContext, useState } from "react";
 import "./Header.css";
 import ProfileTooltip from "../Profile_Tooltip/ProfileTooltip";
 import { useNavigate } from "react-router-dom";
-import {authenticationContext} from '../../App'
-import { AuthContext } from "../../hooks/AuthContext";
+import { AuthContext } from "../../store/AuthContext";
 
 function Header() {
 

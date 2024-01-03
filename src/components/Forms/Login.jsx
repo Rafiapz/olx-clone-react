@@ -3,10 +3,7 @@ import './Login.css'
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from '../../firebase/config'
 import { useNavigate } from 'react-router-dom';
-import Header from '../header/Header';
-import Post from '../cards/Post';
-import Footer from '../footer/Footer';
-import { AuthContext } from '../../hooks/AuthContext';
+import { AuthContext } from '../../store/AuthContext';
 
 function Login() {
 

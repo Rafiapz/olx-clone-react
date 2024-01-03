@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import './ProfileTooltip.css'
-import { AuthContext } from '../../hooks/AuthContext'
+import { AuthContext } from '../../store/AuthContext'
 
 function ProfileTooltip() {
 
@@ -37,11 +37,11 @@ function ProfileTooltip() {
                     <img src="icons/setting.png" alt="" className="w-5" />
                     <h4>Settings</h4>
                 </div>
-                <div className="item px-8" >
-                    <img src="icons/logout.png" alt="" className="w-5" />
-                    <h4 onClick={() => {
+                <div onClick={() => {
                        logout()
-                    }} >Logout</h4>
+                    }}  className="item px-8" >
+                    <img src="icons/logout.png" alt="" className="w-5" />
+                    <h4>Logout</h4>
                 </div>
             </div>
         </div>}

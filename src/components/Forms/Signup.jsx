@@ -1,19 +1,14 @@
-import React, { useState, useContext } from "react";
+import React, { useState} from "react";
 import "./Signup.css";
-import { FirebaseContext } from "../../store/firebaseContext";
 import { auth } from "../../firebase/config";
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { setDoc, doc, getFirestore } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
-import Header from "../header/Header";
-import Footer from "../footer/Footer";
-import Post from "../cards/Post";
-import { AuthContext } from "../../hooks/AuthContext";
-import { useForm } from 'react-hook-form';
+
+
 
 function Signup() {
-    const { isLoggedIn,handleSignup } = useContext(AuthContext);
-    
+
 
     const [Name, setName] = useState("");
     const [Email, setEmail] = useState("");
@@ -24,7 +19,7 @@ function Signup() {
 
 
     const handleUser = (val) => {
-       
+
     };
 
     const firestore = getFirestore();

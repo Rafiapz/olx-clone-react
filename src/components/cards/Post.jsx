@@ -1,9 +1,9 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
 import "./Post.css";
-import { collection, getDoc, getDocs } from "firebase/firestore";
+import { collection, getDocs } from "firebase/firestore";
 import { db } from "../../firebase/config";
 import { useNavigate } from "react-router-dom";
-import { PostContext } from "../../hooks/PostContext";
+import { PostContext } from "../../store/PostContext";
 
 export const postContext = createContext();
 
