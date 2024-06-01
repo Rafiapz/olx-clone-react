@@ -2,29 +2,30 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+   .header {
+      @apply bg-green-900 text-white py-4 px-6 flex items-center justify-between;
+   }
 
-@layer components{
+   .loginMain {
+      position: fixed;
+      z-index: 5;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: rgb(145, 195, 198);
+      width: 400px;
+   }
 
-    .loginMain {
-        position: fixed;
-        z-index: 5;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -70%);
-        background-color: rgb(145, 195, 198);
-        width: 400px;
+   .loginSubmit {
+      background-color: green;
+   }
 
-        
-    }
-    .loginSubmit{
+   body.active-modal {
+      overflow-y: hidden;
+   }
 
-        background-color: green;
-    }
-    body.active-modal {
-        overflow-y: hidden;
-    }
-    .fa-circle-xmark{
-        
-        font-size: xx-large;
-    }
+   .fa-circle-xmark {
+      font-size: xx-large;
+   }
 }

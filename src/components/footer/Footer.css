@@ -1,24 +1,24 @@
-.footer-container .top-container{
-    @apply bg-slate-100 flex items-start justify-between px-8 py-8 mt-64;
+.footer-container .top-container {
+   @apply bg-slate-100 flex items-start justify-between px-8 py-8 mt-16;
 }
-.footer-container .bottom-container h4{
-    @apply text-xs font-normal;
+.footer-container .bottom-container h4 {
+   @apply text-xs font-normal;
 }
-.footer-container .footer-col{
-    @apply flex flex-col items-start gap-2;
+.footer-container .footer-col {
+   @apply flex flex-col items-start gap-2;
 }
-.footer-container .footer-col .content{
-    @apply flex flex-col items-start gap-1;
+.footer-container .footer-col .content {
+   @apply flex flex-col items-start gap-1;
 }
-.footer-container .footer-col .content h4{
-    @apply text-xs font-light;
+.footer-container .footer-col .content h4 {
+   @apply text-xs font-light;
 }
-.footer-container .footer-col h4{
-    @apply text-sm font-medium;
+.footer-container .footer-col h4 {
+   @apply text-sm font-medium;
 }
-.footer-container .footer-col .icons{
-    @apply flex items-center justify-start gap-2;
+.footer-container .footer-col .icons {
+   @apply flex items-center justify-start gap-2;
 }
-.footer-container .footer-col .icons img{
-    @apply w-4;
+.footer-container .footer-col .icons img {
+   @apply w-4;
 }

@@ -3,55 +3,53 @@
 @tailwind utilities;
 
 @layer components {
-  .post-container {
-    margin-left: 150px;
-    margin-right: 150px;
-    margin-bottom: 20px;
-    margin-top: 40px;
-    width: 1200px;
-    height: 300px;
-    /* border: 1px solid black; */
-   
-    display: flex;
-    padding: 5px;
-    gap: 5px;
-  }
-  .post {
-    width: 25%;
-    height: 100%;
-    /* border: 1px solid red; */
-    background-color: aliceblue;
-    padding: 1px;
-  }
-  .post-image {
-    background-image: url("https://image.tmdb.org/t/p/original/kjQBrc00fB2RjHZB3PGR4w9ibpz.jpg");
-    background-size: contain; /* Adjust to 'contain' if needed */
-    background-position: center;
-    background-repeat: no-repeat;
-    width: 100%;
-    height: 60%;
-  }
-  .wishlist-icon{
+   .post-container {
+      margin-left: 150px;
+      margin-right: 150px;
 
-    float: right;
-    margin: 5px;
-    font-size: larger;
-    background-color: white;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .fa-heart{
-    font-size: 27px;
-  }
-  .amount{
-    color: rgb(0 47 52);
-    font-size: 25px;
-    font-weight: 700;
-    margin-top: 10px;
-    margin-left: 15px;
-  }
+      margin-top: 40px;
+      width: 1200px;
+      height: auto;
+      /* border: 1px solid black; */
+
+      display: flex;
+      padding: 5px;
+      gap: 5px;
+   }
+   .post {
+      width: 100%;
+      /* border: 1px solid red; */
+
+      padding: 1px;
+   }
+   .post-image {
+      background-image: url("https://image.tmdb.org/t/p/original/kjQBrc00fB2RjHZB3PGR4w9ibpz.jpg");
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      width: 100%;
+      height: 60%;
+   }
+   .wishlist-icon {
+      float: right;
+      margin: 5px;
+      font-size: larger;
+      background-color: white;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+   }
+   .fa-heart {
+      font-size: 27px;
+   }
+   .amount {
+      color: rgb(0 47 52);
+      font-size: 25px;
+      font-weight: 700;
+      margin-top: 10px;
+      margin-left: 15px;
+   }
 }
